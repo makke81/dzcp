@@ -60,9 +60,9 @@ if(_adminMenu != 'true') exit;
                    WHERE id = '".intval($_GET['id'])."'");
         $get = _fetch($qry);
 
-        $shown = str_replace("<option value='".$get['shown']."'>", "<option selected=\"selected\" value='".$get['shown']."'>", _profile_shown_dropdown);
-	      $kat = str_replace("<option value='".$get['kid']."'>", "<option selected=\"selected\" value='".$get['kid']."'>", _profile_kat_dropdown);
-	      $type = str_replace("<option value='".$get['type']."'>", "<option selected=\"selected\" value='".$get['type']."'>", _profile_type_dropdown);
+	$shown = str_replace('<option value="'.$get['shown'].'">', '<option selected="selected" value="'.$get['shown'].'">', _profile_shown_dropdown);
+	$kat = str_replace('<option value="'.$get['kid'].'">', '<option selected="selected" value="'.$get['kid'].'">', _profile_kat_dropdown);
+	$type = str_replace('<option value="'.$get['type'].'">', '<option selected="selected" value="'.$get['type'].'">', _profile_type_dropdown);
 
         $show = show($dir."/form_profil_edit", array("name" => _profile_name,
 			                            									 "p_name" => re($get['name']),
